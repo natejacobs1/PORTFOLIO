@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* =========================================================================
+     PORTFOLIO DESIGN TOKENS - Neon Lime + Charcoal Palette
+     Tweak these variables to instantly change the entire theme palette.
+     ========================================================================= */
+  
+  /* Primary Signature Accent: Electric Lime / Chartreuse */
+  --accent-primary: #4d7c0f;          /* Light mode: Deep high-contrast lime */
+  --accent-primary-hover: #3f6212;
+  --accent-primary-fg: #ffffff;
+  --accent-primary-vibrant: #65a30d;
+
+  /* Secondary Accent: Electric Cyan */
+  --accent-secondary: #0891b2;        /* Light mode: Deep high-contrast cyan */
+  --accent-secondary-hover: #0e7490;
+  --accent-secondary-fg: #ffffff;
+
+  /* Canvas & Structural Backgrounds */
+  --canvas-bg: #f4f5f8;               /* Light mode: Warm off-white */
+  --canvas-fg: #0f141c;               /* Light mode: Deep charcoal text */
+  --card-bg: #ffffff;
+  --card-border: #e2e6eb;
+  --card-hover-border: #84cc16;
+  --card-glow: rgba(101, 163, 13, 0.15);
+
+  /* Subdued & Muted Tones */
+  --muted-fg: #4b5563;
+  --subtle-border: #e5e7eb;
+}
+
+.dark {
+  /* =========================================================================
+     DARK MODE - Deep Graphite Charcoal + Electric Neon Lime (#CCFF00) + Cyan (#00F2FE)
+     ========================================================================= */
+
+  /* Primary Signature Accent: Electric Lime / Chartreuse (#CCFF00) */
+  --accent-primary: #ccff00;          /* Dark mode: Luminous electric lime */
+  --accent-primary-hover: #b8e600;
+  --accent-primary-fg: #0b0d10;       /* Dark charcoal text on electric lime for WCAG AAA 14.5:1 */
+  --accent-primary-vibrant: #ccff00;
+
+  /* Secondary Accent: Electric Cyan (#00F2FE) */
+  --accent-secondary: #00f2fe;        /* Dark mode: Electric cyan */
+  --accent-secondary-hover: #38bdf8;
+  --accent-secondary-fg: #0b0d10;
+
+  /* Canvas & Structural Backgrounds */
+  --canvas-bg: #0b0d10;               /* Deep graphite charcoal */
+  --canvas-fg: #f3f4f6;               /* Clean warm off-white */
+  --card-bg: #12161e;                 /* Tinted graphite card surface */
+  --card-border: #1f2633;             /* Hairline card boundary */
+  --card-hover-border: #ccff00;       /* Neon lime hover edge */
+  --card-glow: rgba(204, 255, 0, 0.18);/* Soft electric chartreuse ambient glow */
+
+  /* Subdued & Muted Tones */
+  --muted-fg: #94a3b8;
+  --subtle-border: #1e2430;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Subtle background grid pattern for depth */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(204, 255, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(204, 255, 0, 0.02) 1px, transparent 1px);
+}
+
+.light .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(204, 255, 0, 0.5);
+}

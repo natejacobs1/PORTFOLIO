@@ -1,0 +1,6 @@
+{
+  "name": "Adarsh SK - Bento Portfolio",
+  "description": "Bento Grid personal portfolio for Adarsh SK, showcasing full-stack engineering, Web GIS telemetry, and AI systems.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
